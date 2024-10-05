@@ -19,6 +19,17 @@ if [[ "$1" == "light" ]]; then
 elif [[ "$1" == "dark" ]]; then
     load_config "dark"
 else
+    # Se não houver argumento, definir o tema com base na hora atual
+    theme=$(set_theme_based_on_time)
+    load_config "$theme"
+fi
+
+# Verificar o argumento de entrada (claro ou escuro)
+if [[ "$1" == "light" ]]; then
+    load_config "light"
+elif [[ "$1" == "dark" ]]; then
+    load_config "dark"
+else
     echo "Uso: $0 {light|dark}"
     exit 1
 fi
