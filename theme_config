@@ -1,0 +1,15 @@
+# Light theme settings
+[light]
+colorscheme=RelaxLightColor
+wallpaper=~/Pictures/backgrounds/light_wallpaper.jpg
+icon_theme=Tela-circle
+window_decoration=__aurorae__svg__Relax-Blur-Light-Aurorae
+plasma_style=Relax-Light-Plasma
+
+# Dark theme settings
+[dark]
+colorscheme=RelaxDarkColor
+wallpaper=~/Pictures/backgrounds/dark_wallpaper.jpg
+icon_theme=Tela-circle
+window_decoration=__aurorae__svg__Relax-Blur-Aurorae
+plasma_style=Relax-Plasma
