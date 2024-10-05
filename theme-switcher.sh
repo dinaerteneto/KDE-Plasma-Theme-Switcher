@@ -11,6 +11,7 @@ load_config() {
     icon_theme=$(awk -F'=' "/\[$section\]/{a=1} a==1&&\$1~/icon_theme/{print \$2;exit}" "$CONFIG_FILE")
     window_decoration=$(awk -F'=' "/\[$section\]/{a=1} a==1&&\$1~/window_decoration/{print \$2;exit}" "$CONFIG_FILE")
     plasma_style=$(awk -F'=' "/\[$section\]/{a=1} a==1&&\$1~/plasma_style/{print \$2;exit}" "$CONFIG_FILE")
+    konsole_theme=$(awk -F'=' "/\[$section\]/{a=1} a==1&&\$1~/konsole_theme/{print \$2;exit}" "$CONFIG_FILE")
 }
 
 # Função para definir o tema com base na hora atual
@@ -40,10 +41,10 @@ fi
 # Aplicar esquema de cores, papel de parede, ícones, decoração de janelas e estilo Plasma
 plasma-apply-colorscheme "$colorscheme"
 plasma-apply-wallpaperimage "$wallpaper"
-kwriteconfig5 --file ~/.config/kdeglobals --group Icons --key Theme "$icon_theme"
-kwriteconfig5 --file ~/.config/kwinrc --group org.kde.kdecoration2 --key theme "$window_decoration"
-kwriteconfig5 --file ~/.config/plasmarc --group Theme --key name "$plasma_style"
-kwriteconfig5 --file ~/.config/konsolerc --group "Desktop Entry" --key DefaultProfile "$konsole_theme"
+kwriteconfig5 --file $HOME/.config/kdeglobals --group Icons --key Theme "$icon_theme"
+kwriteconfig5 --file $HOME/.config/kwinrc --group org.kde.kdecoration2 --key theme "$window_decoration"
+kwriteconfig5 --file $HOME/.config/plasmarc --group Theme --key name "$plasma_style"
+kwriteconfig5 --file $HOME/.config/konsolerc --group "Desktop Entry" --key DefaultProfile "$konsole_theme"
 
 
 # Reconfigurar o KWin e o Plasma Shell
