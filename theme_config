@@ -5,6 +5,7 @@ wallpaper=~/Pictures/backgrounds/light_wallpaper.jpg
 icon_theme=Tela-circle
 window_decoration=__aurorae__svg__Relax-Blur-Light-Aurorae
 plasma_style=Relax-Light-Plasma
+konsole_theme=LightTheme.profile
 
 # Dark theme settings
 [dark]
@@ -13,6 +14,7 @@ wallpaper=~/Pictures/backgrounds/dark_wallpaper.jpg
 icon_theme=Tela-circle
 window_decoration=__aurorae__svg__Relax-Blur-Aurorae
 plasma_style=Relax-Plasma
+konsole_theme=DarkTheme.profile
 
 [settings]
 light_start_hour=7

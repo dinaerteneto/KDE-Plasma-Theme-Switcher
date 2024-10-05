@@ -43,6 +43,8 @@ plasma-apply-wallpaperimage "$wallpaper"
 kwriteconfig5 --file ~/.config/kdeglobals --group Icons --key Theme "$icon_theme"
 kwriteconfig5 --file ~/.config/kwinrc --group org.kde.kdecoration2 --key theme "$window_decoration"
 kwriteconfig5 --file ~/.config/plasmarc --group Theme --key name "$plasma_style"
+kwriteconfig5 --file ~/.config/konsolerc --group "Desktop Entry" --key DefaultProfile "$konsole_theme"
+
 
 # Reconfigurar o KWin e o Plasma Shell
 qdbus org.kde.KWin /KWin reconfigure

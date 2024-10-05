@@ -1,14 +1,22 @@
 #!/bin/bash
 
-# Mover o arquivo de configuração para ~/.config
-echo "Movendo o arquivo de configuração para ~/.config..."
-mkdir -p "$HOME/.config"
-cp theme_config "$HOME/.config/theme_config"
+# Caminho do arquivo de configuração
+CONFIG_FILE="$HOME/.config/theme_config"
+
+# Verificar se o arquivo de configuração já existe
+if [ ! -f "$CONFIG_FILE" ]; then
+    echo "Movendo o arquivo de configuração para ~/.config..."
+    mkdir -p "$HOME/.config"
+    cp theme_config "$CONFIG_FILE"
+else
+    echo "O arquivo de configuração já existe em ~/.config. Nenhuma ação necessária."
+fi
+
 
 # Copiar o script para /usr/bin
 echo "Copiando o script para /usr/bin..."
 sudo cp theme-switcher.sh /usr/bin/theme-switcher
-chmod +x /usr/bin/theme-switcher
+sudo chmod +x /usr/bin/theme-switcher
 
 # Criar um arquivo de serviço systemd
 echo "Criando o arquivo de serviço systemd..."
