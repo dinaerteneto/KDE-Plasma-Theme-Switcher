@@ -57,17 +57,6 @@ This project provides an automatic theme switching script for KDE5 Plasma, allow
    [settings]
     light_start_hour=7
     dark_start_hour=16
-
-4. **Set up automatic theme switching**:
-   To switch themes automatically, you can use `cron`. Edit your `crontab` with the following commands:
-   ```bash
-   crontab -e
-   ```
-
-    Add these lines to switch to the light theme at 7 AM and to the dark theme at 7 PM:
-   ```bash
-    0 7 * * * /usr/bin/theme-switcher light
-    0 19 * * * /usr/bin/theme-switcher dark
     ```
 
 ## Usage
@@ -75,17 +64,8 @@ This project provides an automatic theme switching script for KDE5 Plasma, allow
 To manually switch themes, run:
 
 ```bash
-./theme-switcher.sh light    # To switch to the light theme
-./theme-switcher.sh dark     # To switch to the dark theme
-```
-
-## Usage
-
-To manually switch themes, run:
-
-```bash
-./theme-switcher.sh light    # To switch to the light theme
-./theme-switcher.sh dark     # To switch to the dark theme
+.theme-switcher.sh light    # To switch to the light theme
+.theme-switcher.sh dark     # To switch to the dark theme
 ```
 
 ## Visual Studio Code Configuration
@@ -99,6 +79,10 @@ If you are using Visual Studio Code, you might want to set your preferred color 
     // "workbench.colorTheme": "Dracula Theme"
 }
 ```
+
+## KDE Console
+
+If yout are using Konsole, you might configure dark and light profiles and set names into theme_config.
 
 ## Uninstall
 
