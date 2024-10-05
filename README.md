@@ -66,8 +66,8 @@ This project provides an automatic theme switching script for KDE5 Plasma, allow
 
     Add these lines to switch to the light theme at 7 AM and to the dark theme at 7 PM:
    ```bash
-    0 7 * * * /usr/bin/change_theme light
-    0 19 * * * /usr/bin/change_theme dark
+    0 7 * * * /usr/bin/theme-switcher light
+    0 19 * * * /usr/bin/theme-switcher dark
     ```
 
 ## Usage
@@ -75,8 +75,8 @@ This project provides an automatic theme switching script for KDE5 Plasma, allow
 To manually switch themes, run:
 
 ```bash
-./change_theme.sh light    # To switch to the light theme
-./change_theme.sh dark     # To switch to the dark theme
+./theme-switcher.sh light    # To switch to the light theme
+./theme-switcher.sh dark     # To switch to the dark theme
 ```
 
 ## Usage
@@ -84,8 +84,8 @@ To manually switch themes, run:
 To manually switch themes, run:
 
 ```bash
-./change_theme.sh light    # To switch to the light theme
-./change_theme.sh dark     # To switch to the dark theme
+./theme-switcher.sh light    # To switch to the light theme
+./theme-switcher.sh dark     # To switch to the dark theme
 ```
 
 ## Visual Studio Code Configuration

@@ -13,6 +13,19 @@ load_config() {
     plasma_style=$(awk -F'=' "/\[$section\]/{a=1} a==1&&\$1~/plasma_style/{print \$2;exit}" "$CONFIG_FILE")
 }
 
+# Função para definir o tema com base na hora atual
+set_theme_based_on_time() {
+    hour=$(date +'%H')
+    light_start_hour=$(awk -F'=' '/light_start_hour/{print $2}' "$CONFIG_FILE")
+    dark_start_hour=$(awk -F'=' '/dark_start_hour/{print $2}' "$CONFIG_FILE")
+
+    if [ "$hour" -ge "$light_start_hour" ] && [ "$hour" -lt "$dark_start_hour" ]; then
+        echo "light"
+    else
+        echo "dark"
+    fi
+}
+
 # Verificar o argumento de entrada (claro ou escuro)
 if [[ "$1" == "light" ]]; then
     load_config "light"
@@ -22,16 +35,6 @@ else
     # Se não houver argumento, definir o tema com base na hora atual
     theme=$(set_theme_based_on_time)
     load_config "$theme"
-fi
-
-# Verificar o argumento de entrada (claro ou escuro)
-if [[ "$1" == "light" ]]; then
-    load_config "light"
-elif [[ "$1" == "dark" ]]; then
-    load_config "dark"
-else
-    echo "Uso: $0 {light|dark}"
-    exit 1
 fi
 
 # Aplicar esquema de cores, papel de parede, ícones, decoração de janelas e estilo Plasma
